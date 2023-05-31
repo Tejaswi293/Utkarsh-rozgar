@@ -25,4 +25,3 @@ You will also see any lint errors in the console.
 
 Sample email : sk123@gmail.com
 Sample password : sk123456
-
