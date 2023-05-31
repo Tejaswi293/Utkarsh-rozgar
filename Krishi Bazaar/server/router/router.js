@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-
+const crypto = require('crypto');
+const jwt = require('jsonwebtoken');
 require('../Database/connection');
 const User = require('../model/userSchema');
 
@@ -23,15 +24,25 @@ router.get('/login', (req, res) => {
   res.send('Hello this is LOGIN routing');
 });
 
-
 router.post('/forgotpassword', async (req, res) => {
+  createResetToken = function () {
+    const resetToken = crypto.randomBytes(32).toString('hex');
+    this.resetToken = crypto
+      .createHash('sha256')
+      .update(resetToken)
+      .digest('hex');
+    this.resetTokenExpires = Date.now() + 10 * 60 * 1000;
+    return resetToken;
+  };
   try {
     const { email } = req.body;
     const registeredUser = await User.findOne({ email: email });
     if (!registeredUser) {
       res.status(404).json({ message: 'User not Found', state: false });
     }
-    const token = registeredUser.createResetToken();
+    const token = createResetToken();
+    registeredUser.token = token;
+    console.log(token);
     await registeredUser.save({ validateBeforeSave: false });
     res.status(200).json({ message: 'Token sent to email', state: true });
   } catch (err) {
@@ -44,9 +55,7 @@ router.post('/resetpassword', (req, res) => {
   if (!token) {
     res.status(404).json({ message: 'Token not found', state: false });
   }
-  const decoded = jwt.verify(token, process.env.SECRET_KEY);
-  const id = decoded.id;
-  User.findById(id)
+User.findOne({ token: token })
     .then((user) => {
       if (!user) {
         res.status(404).json({ message: 'User not found', state: false });

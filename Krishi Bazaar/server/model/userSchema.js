@@ -25,8 +25,12 @@ const schema = new mongoose.Schema({
     confirmPassword: {
         type: String,
         required: true,
+    },
+    token: {
+        type: String
     }
 });
+
 
 // hashing users passwords
 schema.pre('save', async function(next) {

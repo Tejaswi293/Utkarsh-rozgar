@@ -27,7 +27,7 @@ const sendData = async (e) => {
     console.log(JSON.stringify(data));
     if(data.state){
       alert('Reset Password token sent to your email');
-      navigate('/resetpassword');
+      navigate('/token')
       window.location.reload();
     }
     else{
@@ -53,5 +53,4 @@ const handleSubmit = (e) => {
     </div>
   )
 }
-
 export default ForgotPassword
