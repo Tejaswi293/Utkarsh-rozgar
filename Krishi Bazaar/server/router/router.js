@@ -23,9 +23,55 @@ router.get('/login', (req, res) => {
   res.send('Hello this is LOGIN routing');
 });
 
+
+router.post('/forgotpassword', async (req, res) => {
+  try {
+    const { email } = req.body;
+    const registeredUser = await User.findOne({ email: email });
+    if (!registeredUser) {
+      res.status(404).json({ message: 'User not Found', state: false });
+    }
+    const token = registeredUser.createResetToken();
+    await registeredUser.save({ validateBeforeSave: false });
+    res.status(200).json({ message: 'Token sent to email', state: true });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.post('/resetpassword', (req, res) => {
+  const { token, password, confirmPassword } = req.body;
+  if (!token) {
+    res.status(404).json({ message: 'Token not found', state: false });
+  }
+  const decoded = jwt.verify(token, process.env.SECRET_KEY);
+  const id = decoded.id;
+  User.findById(id)
+    .then((user) => {
+      if (!user) {
+        res.status(404).json({ message: 'User not found', state: false });
+      }
+      user.password = password;
+      user.confirmPassword = confirmPassword;
+      user
+        .save()
+        .then(() => {
+          res.status(200).json({ message: 'Password updated', state: true });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+
+
 router.post('/signup', async (req, res) => {
-  const { name, email, phone, password, confirmPassword } = req.body;
-  const user = new User({ name, email, phone, password, confirmPassword });
+  const { name, email, phone, role, password, confirmPassword } = req.body;
+  const user = new User({ name, email, phone, role, password, confirmPassword });
 
   try {
     const userExists = await User.findOne({ email: email });
@@ -45,14 +91,14 @@ router.post('/signup', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, role } = req.body;
     const registeredUser = await User.findOne({ email: email });
-
-    console.log(email, password);
+    
+    console.log(email, password, role);
     console.log(registeredUser);
 
     // checking users existence
-    if (!registeredUser) {
+    if (!registeredUser || registeredUser.role !== role) {
       res.status(404).json({ message: 'User not Found', state: false });
     }
 
@@ -76,7 +122,7 @@ router.post('/login', async (req, res) => {
   }
     catch (err) {
         console.log(err);
-        }
+  }
         
     
 });

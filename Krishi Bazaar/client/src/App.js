@@ -5,6 +5,8 @@ import Signup from './Components/Signup';
 import Login from './Components/Login';
 import Dashboard from './Components/Dashboard';
 import {BrowserRouter, Routes , Route} from 'react-router-dom';
+import ForgotPassword from './Components/ForgotPassword';
+import ResetPassword from './Components/ResetPassword';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route exact path = '/signup' element = {<Signup/>} />
           <Route exact path = '/login' element = {<Login/>} />
           <Route exact path = '/dashboard' element = {<Dashboard/>} />
+          <Route exact path = '/forgotpassword' element = {<ForgotPassword/>} />
+          <Route exact path = '/resetpassword' element = {<ResetPassword/>} />
         </Routes>
       </div>
     </BrowserRouter>

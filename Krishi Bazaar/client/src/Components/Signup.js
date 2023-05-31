@@ -5,6 +5,7 @@ const Signup = () => {
   const [userCredential, setUserCredential] = useState({
     name: "",
     phone: "",
+    role: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -18,7 +19,7 @@ const Signup = () => {
 
   const sendData = async (e) => {
     e.preventDefault();
-    const {name, phone, email, password, confirmPassword} = userCredential;
+    const {name, phone, role, email, password, confirmPassword} = userCredential;
     
     const res = await fetch('/signup', {
       method: "POST",
@@ -26,7 +27,7 @@ const Signup = () => {
         "content-Type": "application/json"
       },
       body: JSON.stringify({
-        name, email, phone, password, confirmPassword
+        name, email, phone, role, password, confirmPassword
       })
     });
 
@@ -43,6 +44,7 @@ const Signup = () => {
   return (
     <div className = "container mt-5 m-auto w-50 border p-5">
       <form>
+        <h1>Sign Up</h1>
         <div className="mb-3">
           <label for="name" className = "form-label">Name</label>
           <input name = "name" type="text" className = "form-control" aria-describedby="emailHelp"  value = {userCredential.name} onChange = {setCredential}/>
@@ -52,6 +54,14 @@ const Signup = () => {
           <label for="phone" className = "form-label">Phone Number</label>
           <input name = "phone" type="number" className ="form-control" aria-describedby="emailHelp" value = {userCredential.phone} onChange = {setCredential}/>
           <div id="emailHelp" className ="form-text">We'll never share your phone with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="role" className = "form-label">Role</label>
+          <select name = "role" className ="form-control" aria-describedby="emailHelp" value = {userCredential.role} onChange = {setCredential}>
+            <option value = "Farmer">Farmer</option>
+            <option value = "Customer">Customer</option>
+          </select>
+          <div id="emailHelp" className ="form-text">We'll never share your role with anyone else.</div>
         </div>
         <div className="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
