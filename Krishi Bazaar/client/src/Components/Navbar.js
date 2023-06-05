@@ -16,14 +16,15 @@ const Navbar = () => {
       localStorage.removeItem("authenticated");
       setAuthenticated(false);
     }
-
+   
     if(authenticated) {
       return (    
-        <nav className ="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className ="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: "rgb(239,68,68)"}}>
         <div className ="container-fluid">
           <a className ="navbar-brand" href="#">
-          <img src={Anchor} width={180} height={30} alt=""></img>
+          <img src={Anchor} width={180} height={90} alt=""></img>
           </a>
+          <NavLink className ="navbar-brand" to ="/">Utkarsh Rozgar</NavLink>
           <button className ="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className ="navbar-toggler-icon"></span>
           </button>
@@ -43,11 +44,12 @@ const Navbar = () => {
     };
   return (
     <>
-      <nav className ="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className ="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: "rgb(239,68,68)"}}>
         <div className ="container-fluid">
         <a className ="navbar-brand" href="#">
-          <img src={Anchor} height={30} width={180} alt=""></img>
+          <img src={Anchor} height={90} width={180} alt=""></img>
           </a>
+          <NavLink className ="navbar-brand" to ="/">Utkarsh Rozgar</NavLink>
           <button className ="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className ="navbar-toggler-icon"></span>
           </button>
@@ -63,7 +65,7 @@ const Navbar = () => {
                 <NavLink className ="nav-link" to ="/login">Login</NavLink>
               </li>
               <li className ="nav-item">
-                <NavLink className ="nav-link" to ="/profile">Profile</NavLink>
+                <NavLink className ="nav-link" to ="/contact">Contact</NavLink>
               </li>
             </ul>
           </div>

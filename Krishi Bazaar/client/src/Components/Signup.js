@@ -76,6 +76,9 @@ const Signup = () => {
           <label for="confirmPassword" class="form-label">Confirm Password</label>
           <input name = "confirmPassword" type="password" class="form-control" value = {userCredential.confirmPassword} onChange = {setCredential}/>
         </div>
+        <div className="mb-3">
+                <a href = "/login">Already have an account? Log in</a>
+            </div>
         <button type="submit" className = "btn btn-primary" onClick = {sendData}>Submit</button>
     </form>
     </div>

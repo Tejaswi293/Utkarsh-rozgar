@@ -8,6 +8,8 @@ import {BrowserRouter, Routes , Route} from 'react-router-dom';
 import ForgotPassword from './Components/ForgotPassword';
 import ResetPassword from './Components/ResetPassword';
 import Token from './Components/Token';
+import FarmerDashboard from './Components/FarmerDashboard';
+import Contact from './Components/Contact';
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +23,8 @@ function App() {
           <Route exact path = '/forgotpassword' element = {<ForgotPassword/>} />
           <Route exact path = '/resetpassword' element = {<ResetPassword/>} />
           <Route exact path = '/token' element = {<Token/>} />
+          <Route exact path = '/farmerdashboard' element = {<FarmerDashboard/>} />
+          <Route exact path = '/contact' element = {<Contact/>} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -7,12 +7,20 @@ const Login = () => {
         password: "",
         role: ""
     });
+    const [rememberMe, setRememberMe] = useState(localStorage.getItem("rememberMe") || false);
     const [authenticated, setAuthenticated] = useState(localStorage.getItem("authenticated") || false);
     const setCredential = (e) => {
         let nameOfData = e.target.name;
         let value = e.target.value;
         setUserCredential({ ...userCredential, [nameOfData]: value });
     }
+    const handleRememberMe = (e) => {
+        setRememberMe(e.target.checked);
+        localStorage.setItem("rememberMe", e.target.checked);
+    }
+
+
+            
     const sendData = async (e) => {
         e.preventDefault();
         const { email, password, role } = userCredential;
@@ -29,14 +37,26 @@ const Login = () => {
         const data = await res.json();
         console.log(data);
         console.log(JSON.stringify(data));
+        if(rememberMe)
+        {
+            localStorage.setItem("email", email);
+        }
         if (data.state) {
             alert('Login Successful');
             localStorage.setItem('authenticated', true);
             setAuthenticated(true);
             localStorage.setItem('Status', data.status);
             localStorage.setItem('Name', data.name);
-            navigate('/dashboard');
-            window.location.reload();
+            if(role === "farmer")
+            {
+                navigate('/farmerdashboard');
+                window.location.reload();
+            }
+            else
+            {
+                navigate('/dashboard');
+                window.location.reload();
+            }
           } else {
             alert('Invalid Credentials');
           }
@@ -66,7 +86,7 @@ const Login = () => {
             </div>
 
             <div className="mb-3 form-check">
-                <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+                <input type="checkbox" className="form-check-input" id="exampleCheck1" onClick={handleRememberMe}/>
                 <label className="form-check-label" for="exampleCheck1">Remember Me</label>
             </div>
             <div className="mb-3">

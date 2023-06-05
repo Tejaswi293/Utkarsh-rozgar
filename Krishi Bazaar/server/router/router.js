@@ -80,7 +80,7 @@ User.findOne({ token: token })
 
 router.post('/signup', async (req, res) => {
   const { name, email, phone, role, password, confirmPassword } = req.body;
-  const user = new User({ name, email, phone, role, password, confirmPassword });
+  const user = new User({ name, email, phone, role : req.body.role, password, confirmPassword });
 
   try {
     const userExists = await User.findOne({ email: email });
@@ -104,6 +104,7 @@ router.post('/login', async (req, res) => {
     const registeredUser = await User.findOne({ email: email });
     
     console.log(email, password, role);
+    console.log(role);
     console.log(registeredUser);
 
     // checking users existence

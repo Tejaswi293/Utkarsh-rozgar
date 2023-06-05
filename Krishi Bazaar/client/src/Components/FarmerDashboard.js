@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import {Route, useNavigate} from 'react-router-dom';
 import Navbar from './Navbar';
-const Dashboard = () => {
+const FarmerDashboard = () => {
     const navigate = useNavigate();
     const [authenticated, setAuthenticated] = useState(null);
     useEffect(() => {
@@ -11,13 +11,13 @@ const Dashboard = () => {
     }
     }, []);
     const handleClick = () => {
-        window.open("https://in.linkedin.com/company/mohua");
+        window.open("https://www.linkedin.com/company/beanchor");
     }
     
     if(authenticated) {
         return (
             <div className = "container text-center h-100" style={{"padding-top" : "200px"}}>
-            <h1 className = "mt-5">Welcome to Utkarsh Rozgar Admin dashboard</h1>
+            <h1 className = "mt-5">Welcome to Krishi Bazaar Farmer dashboard</h1>
             <button type="button" class="btn btn-dark" onClick = {handleClick}>Follow us on linkedin</button>
             </div>
         );
@@ -29,6 +29,6 @@ const Dashboard = () => {
     }
     
 };
-export default Dashboard;
+export default FarmerDashboard;
 
         
