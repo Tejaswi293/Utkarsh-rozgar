@@ -18,7 +18,7 @@ const Dashboard = () => {
         return (
             <div className = "container text-center h-100" style={{"padding-top" : "200px"}}>
             <h1 className = "mt-5">Welcome to Utkarsh Rozgar Admin dashboard</h1>
-            <button type="button" class="btn btn-dark" onClick = {handleClick}>Follow us on linkedin</button>
+            <button type="button" className="btn btn-dark" onClick = {handleClick}>Follow us on linkedin</button>
             </div>
         );
     }

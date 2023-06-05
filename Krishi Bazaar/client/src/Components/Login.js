@@ -42,12 +42,12 @@ const Login = () => {
             localStorage.setItem("email", email);
         }
         if (data.state) {
-            alert('Login Successful');
+            alert('Login Successful' );
             localStorage.setItem('authenticated', true);
             setAuthenticated(true);
             localStorage.setItem('Status', data.status);
             localStorage.setItem('Name', data.name);
-            if(role === "farmer")
+            if(userCredential.role === "Farmer")
             {
                 navigate('/farmerdashboard');
                 window.location.reload();
