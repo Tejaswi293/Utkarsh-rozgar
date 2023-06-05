@@ -42,7 +42,7 @@ const ResetPassword = (props) => {
     }
 
     return (
-        <div>
+        <div className="container mt-5 m-auto w-50 border p-5">
             <h1>Reset Password</h1>
             <form>
                 <div className="mb-3">
