@@ -11,7 +11,7 @@ const FarmerDashboard = () => {
     }
     }, []);
     const handleClick = () => {
-        window.open("https://www.linkedin.com/company/beanchor");
+        window.open("https://in.linkedin.com/company/mohua");
     }
     
     if(authenticated) {
