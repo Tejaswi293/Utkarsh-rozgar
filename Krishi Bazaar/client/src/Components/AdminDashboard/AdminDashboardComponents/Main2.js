@@ -1,10 +1,9 @@
 import './Main.css'
-import Employer1 from '../AdminDashboardImages/Employer1'
-import Employer2 from '../AdminDashboardImages/Employer2'
-import Employer3 from '../AdminDashboardImages/Employer3'
-import Employer4 from '../AdminDashboardImages/Employer4'
-import Employer5 from '../AdminDashboardImages/Employer5'
-
+import Employer1 from '../AdminDashboardImages/Employer1.png'
+import Employer2 from '../AdminDashboardImages/Employer2.png'
+import Employer3 from '../AdminDashboardImages/Employer3.png'
+import Employer4 from '../AdminDashboardImages/Employer4.png'
+import Employer5 from '../AdminDashboardImages/Employer5.png'
 import React from 'react'
 
 export default function Main2() {

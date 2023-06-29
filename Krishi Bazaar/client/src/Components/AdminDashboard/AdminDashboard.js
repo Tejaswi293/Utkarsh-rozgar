@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import {Route, useNavigate} from 'react-router-dom';
-import Navbar from '../Navbar';
-import Header from '../AdminDashboardComponents/Header';
-import Footer from '../AdminDashboardComponents/Footer';
-import Main from '../AdminDashboardComponents/Main';
-import Main2 from '../AdminDashboardComponents/Main2';
-import Main3 from '../AdminDashboardComponents/Main3';
+import Header from './AdminDashboardComponents/Header';
+import Main from './AdminDashboardComponents/Main';
+import Main2 from './AdminDashboardComponents/Main2';
+import Main3 from './AdminDashboardComponents/Main3';
+import Footer from './AdminDashboardComponents/Footer';
 const AdminDashboard = () => {
     const navigate = useNavigate();
     const [authenticated, setAuthenticated] = useState(null);
@@ -18,13 +17,13 @@ const AdminDashboard = () => {
     
     if(authenticated) {
         return (
-            <>
-            <Header/>
-            <Main/>
-            <Main2/>
-            <Main3/>
-            <Footer/>
-            </>
+            <div>
+                <Header title="Utkarsh Rozgar" />
+                <Main />
+                <Main2 />
+                <Main3 />
+                <Footer title="Utkarsh Rozgar" />
+            </div>
         );
     }
     else

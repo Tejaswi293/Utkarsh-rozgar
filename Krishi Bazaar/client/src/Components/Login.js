@@ -52,11 +52,17 @@ const Login = () => {
                 navigate('/workerdashboard');
                 window.location.reload();
             }
-            else
+            else if(userCredential.role === "Customer")
+            {
+                navigate('/admindashboard');
+                window.location.reload();
+            }
+            else if(userCredential.role === "Admin")
             {
                 navigate('/admindashoard');
                 window.location.reload();
             }
+            
           } else {
             alert('Invalid Credentials');
           }

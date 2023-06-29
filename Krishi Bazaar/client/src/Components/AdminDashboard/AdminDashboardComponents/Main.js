@@ -1,8 +1,8 @@
 import React from 'react'
 import './Main.css'
-import Worker1 from '../AdminDashboardImages/Worker1'
-import Worker2 from '../AdminDashboardImages/Worker2'
-import Worker3 from '../AdminDashboardImages/Worker3'
+import Worker1 from '../AdminDashboardImages/Worker1.png'
+import Worker2 from '../AdminDashboardImages/Worker2.png'
+import Worker3 from '../AdminDashboardImages/Worker3.png'
 
 
 export default function Main() {
