@@ -1,9 +1,9 @@
 import React from 'react'
 import './Card.css'
-import maxresdefault from '../FarmerDashboardImages/maxresdefault.jpg';
-import iisc from '../FarmerDashboardImages/iisc.jpg';
-import pmkk from '../FarmerDashboardImages/pmkk.png';
-import rozgar from '../FarmerDashboardImages/rozgar.jpg'
+import maxresdefault from '../WorkerDashboardImages/maxresdefault.jpg';
+import iisc from '../WorkerDashboardImages/iisc.jpg';
+import pmkk from '../WorkerDashboardImages/pmkk.png';
+import rozgar from '../WorkerDashboardImages/rozgar.jpg'
 export default function card(props) {
     return (
         <div class="card-deck">

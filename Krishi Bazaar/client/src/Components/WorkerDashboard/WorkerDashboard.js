@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import {Route, useNavigate} from 'react-router-dom';
 // import Navbar from '../Navbar';
-import './FarmerDashboard.css';
-import Header from './FarmerDashboardComponents/Header';
-import Anncounce from './FarmerDashboardComponents/Anncounce';
-import Card from './FarmerDashboardComponents/Card';
-import First from './FarmerDashboardComponents/First';
-import Testimony from './FarmerDashboardComponents/Testimony';
-import Job from './FarmerDashboardComponents/Job';
-import Footer from './FarmerDashboardComponents/Footer';
-const FarmerDashboard = () => {
+import './WorkerDashboard.css';
+import Header from './WorkerDashboardComponents/Header';
+import Anncounce from './WorkerDashboardComponents/Announce';
+import Card from './WorkerDashboardComponents/Card';
+import First from './WorkerDashboardComponents/First';
+import Testimony from './WorkerDashboardComponents/Testimony';
+import Job from './WorkerDashboardComponents/Job';
+import Footer from './WorkerDashboardComponents/Footer';
+const WorkerDashboard = () => {
     const navigate = useNavigate();
     const [authenticated, setAuthenticated] = useState(null);
     useEffect(() => {
@@ -48,6 +48,6 @@ const FarmerDashboard = () => {
     }
     
 };
-export default FarmerDashboard;
+export default WorkerDashboard;
 
         

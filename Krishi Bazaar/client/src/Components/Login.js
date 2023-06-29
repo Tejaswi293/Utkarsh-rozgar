@@ -47,14 +47,14 @@ const Login = () => {
             setAuthenticated(true);
             localStorage.setItem('Status', data.status);
             localStorage.setItem('Name', data.name);
-            if(userCredential.role === "Farmer")
+            if(userCredential.role === "Worker")
             {
-                navigate('/farmerdashboard');
+                navigate('/workerdashboard');
                 window.location.reload();
             }
             else
             {
-                navigate('/dashboard');
+                navigate('/admindashoard');
                 window.location.reload();
             }
           } else {
@@ -76,8 +76,8 @@ const Login = () => {
             <div class="mb-3">
             <label for="role" className = "form-label">Role</label>
             <select name = "role" className ="form-control" aria-describedby="emailHelp" value = {userCredential.role} onChange = {setCredential}>
-                <option value = "Admin">Admin</option>
-                <option value = "Farmer">Farmer</option>
+                <option value = "Nodal officer">Nodal officer</option>
+                <option value = "Worker">Worker</option>
                 <option value = "Customer">Customer</option>
             </select>
             </div>

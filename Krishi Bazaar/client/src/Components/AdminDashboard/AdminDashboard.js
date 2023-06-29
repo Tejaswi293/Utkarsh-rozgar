@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import {Route, useNavigate} from 'react-router-dom';
-import Navbar from './Navbar';
-const Dashboard = () => {
+import Navbar from '../Navbar';
+import Header from '../AdminDashboardComponents/Header';
+import Footer from '../AdminDashboardComponents/Footer';
+import Main from '../AdminDashboardComponents/Main';
+import Main2 from '../AdminDashboardComponents/Main2';
+import Main3 from '../AdminDashboardComponents/Main3';
+const AdminDashboard = () => {
     const navigate = useNavigate();
     const [authenticated, setAuthenticated] = useState(null);
     useEffect(() => {
@@ -10,16 +15,16 @@ const Dashboard = () => {
     setAuthenticated(loggedInUser);
     }
     }, []);
-    const handleClick = () => {
-        window.open("https://in.linkedin.com/company/mohua");
-    }
     
     if(authenticated) {
         return (
-            <div className = "container text-center h-100" style={{"padding-top" : "200px"}}>
-            <h1 className = "mt-5">Welcome to Utkarsh Rozgar Admin dashboard</h1>
-            <button type="button" className="btn btn-dark" onClick = {handleClick}>Follow us on linkedin</button>
-            </div>
+            <>
+            <Header/>
+            <Main/>
+            <Main2/>
+            <Main3/>
+            <Footer/>
+            </>
         );
     }
     else
@@ -29,6 +34,6 @@ const Dashboard = () => {
     }
     
 };
-export default Dashboard;
+export default AdminDashboard;
 
         

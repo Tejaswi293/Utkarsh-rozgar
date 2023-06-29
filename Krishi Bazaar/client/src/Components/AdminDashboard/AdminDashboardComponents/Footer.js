@@ -1,6 +1,5 @@
-
 import React from 'react'
-import logo from '../FarmerDashboardImages/logo.png'
+import logo from '../AdminDashboardImages/logo.png'
 export default function Footer(props) {
     return (
         <footer class="text-gray-600 body-font">
@@ -69,7 +68,6 @@ export default function Footer(props) {
                             <li>
                                 <a class="text-gray-600 hover:text-gray-800">Scheme</a>
                             </li>
-
                         </nav>
                     </div>
                 </div>

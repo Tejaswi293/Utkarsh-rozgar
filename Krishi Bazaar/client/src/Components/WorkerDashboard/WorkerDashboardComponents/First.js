@@ -1,5 +1,5 @@
 import React from 'react'
-import maxresdefault from '../FarmerDashboardImages/maxresdefault.jpg'
+import maxresdefault from '../WorkerDashboardImages/maxresdefault.jpg'
 
 export default function First() {
     return (
