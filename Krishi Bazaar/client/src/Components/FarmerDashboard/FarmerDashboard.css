@@ -1,0 +1,24 @@
+.main
+{
+    display: flex;
+    justify-content: flex-start;
+    padding: 40px;
+    padding-top: 0px;
+    justify-content:space-around;
+    margin-top: 0%;
+}
+
+@keyframes App-logo-spin {
+from {
+    transform: rotate(0deg);
+}
+to {
+transform: rotate(360deg);
+}
+ }
+.review
+{
+    text-align: center;
+    font-weight: 500;
+    font-size: xx-large;
+}

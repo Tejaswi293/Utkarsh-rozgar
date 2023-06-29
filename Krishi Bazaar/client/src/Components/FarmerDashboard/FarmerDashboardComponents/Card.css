@@ -1,0 +1,11 @@
+.card-deck
+{
+    display:flex;
+    width: 60%;
+    justify-content:right;
+    margin-top: 5%;
+
+}
+.card{
+    width: 50vw;
+}

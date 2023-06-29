@@ -1,0 +1,30 @@
+   .sticky-container {
+    position: relative;
+    margin-top: 5%;
+    left: 20px;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+  
+  
+  .sticky-box {
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    transition: top 0.2s ease-in-out;
+  }
+  
+  .sticky-box h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .sticky-box p {
+    margin: 10px 0 0;
+    color: #777;
+  }
+  

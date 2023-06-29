@@ -34,6 +34,9 @@ const Navbar = () => {
                   <p className='nav-link-active' style={{color : "white", paddingTop : "8px"}}>Welcome {name}</p>
               </li>
               <li>
+              <NavLink className ="nav-link active" aria-current="page" to ="/profile">Profile</NavLink>
+              </li>
+              <li>
               <NavLink className ="nav-link active" aria-current="page" to ="/" onClick={handleLogout}>Logout</NavLink>
               </li>
             </ul>
