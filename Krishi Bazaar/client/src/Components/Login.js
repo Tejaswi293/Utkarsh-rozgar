@@ -52,7 +52,7 @@ const Login = () => {
                 navigate('/workerdashboard');
                 window.location.reload();
             }
-            else if(userCredential.role === "Customer")
+            else if(userCredential.role === "Employer")
             {
                 navigate('/admindashboard');
                 window.location.reload();
@@ -84,7 +84,7 @@ const Login = () => {
             <select name = "role" className ="form-control" aria-describedby="emailHelp" value = {userCredential.role} onChange = {setCredential}>
                 <option value = "Nodal officer">Nodal officer</option>
                 <option value = "Worker">Worker</option>
-                <option value = "Customer">Customer</option>
+                <option value = "Employer">Employer</option>
             </select>
             </div>
             <div className="mb-3"> 

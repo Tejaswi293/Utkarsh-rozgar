@@ -9,7 +9,7 @@ import ForgotPassword from './Components/ForgotPassword';
 import ResetPassword from './Components/ResetPassword';
 import Token from './Components/Token';
 import WorkerDashboard from './Components/WorkerDashboard/WorkerDashboard';
-import Contact from './Components/Contact';
+import AboutUs from './Components/About us/AboutUs';
 import Profile from './Components/Profile';
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Route exact path = '/resetpassword' element = {<ResetPassword/>} />
           <Route exact path = '/token' element = {<Token/>} />
           <Route exact path = '/workerdashboard' element = {<WorkerDashboard/>} />
-          <Route exact path = '/contact' element = {<Contact/>} />
+          <Route exact path = '/about' element = {<AboutUs/>} />
           <Route exact path = '/profile' element = {<Profile/>} />
         </Routes>
       </div>

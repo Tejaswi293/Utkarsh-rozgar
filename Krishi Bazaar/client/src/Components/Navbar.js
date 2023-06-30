@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@popperjs/core";
+import "bootstrap";
 import Anchor from './Anchor.png'
 const Navbar = () => {
   const [authenticated, setAuthenticated] = useState(null);
@@ -16,9 +19,11 @@ const Navbar = () => {
       localStorage.removeItem("authenticated");
       setAuthenticated(false);
     }
-   
+    const [dropdown, setDropdown] = useState(false);
+    const toggleOpen = () => setDropdown(!dropdown);
     if(authenticated) {
-      return (    
+      // open dropdown
+    return (    
         <nav className ="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: "rgb(239,68,68)"}}>
         <div className ="container-fluid">
           <a className ="navbar-brand" href="#">
@@ -34,7 +39,21 @@ const Navbar = () => {
                   <p className='nav-link-active' style={{color : "white", paddingTop : "8px"}}>Welcome {name}</p>
               </li>
               <li>
-              <NavLink className ="nav-link active" aria-current="page" to ="/profile">Profile</NavLink>
+              <NavLink className ="nav-link active" aria-current="page" to ="/workerdashboard">Home</NavLink>
+            </li>
+              <li>
+              {/* dropdown */}
+              <NavLink>
+              <div className="dropdown">
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" onClick={toggleOpen}>
+                  Profile
+                </button>
+                <ul className={`dropdown-menu ${dropdown ? 'show' : ''}`} aria-labelledby="dropdownMenuButton1" >
+                  <li><NavLink className ="dropdown-item" to ="/profile">View Profile</NavLink></li>
+                  <li><NavLink className ="dropdown-item" to ="/editprofile">Edit Profile</NavLink></li>
+                </ul>
+              </div>
+              </NavLink>
               </li>
               <li>
               <NavLink className ="nav-link active" aria-current="page" to ="/" onClick={handleLogout}>Logout</NavLink>
@@ -68,7 +87,7 @@ const Navbar = () => {
                 <NavLink className ="nav-link" to ="/login">Login</NavLink>
               </li>
               <li className ="nav-item">
-                <NavLink className ="nav-link" to ="/contact">Contact</NavLink>
+                <NavLink className ="nav-link" to ="/about">About us</NavLink>
               </li>
             </ul>
           </div>

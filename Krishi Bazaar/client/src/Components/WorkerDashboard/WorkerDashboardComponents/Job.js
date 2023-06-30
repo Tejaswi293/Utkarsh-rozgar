@@ -1,6 +1,13 @@
 import React from 'react'
+import {Route, useNavigate} from 'react-router-dom';
 import './Job.css'
 export default function Job() {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/jobsearch');
+        window.location.reload();
+    }
+
     return (
         <section class="text-gray-600 body-font">
             <div class="container px-5 py-24 mx-auto">
@@ -10,7 +17,8 @@ export default function Job() {
                         <h1 class="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0">
                             Nearby Job Avaiable:
                         </h1>
-                        <button className='Job' > JOB SEARCH/ नौकरी की खोज</button>
+                        
+                        <button className='Job' onClick={handleClick} > JOB SEARCH/ नौकरी की खोज</button>
                         <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Search For Nearby job avaiable based on
                             your preference and price factor <br /> अपनी पसंद और मूल्य कारक के आधार पर निकटवर्ती नौकरियों की
                             खोज करें </p>

@@ -59,7 +59,7 @@ const Signup = () => {
           <label for="role" className = "form-label">Role</label>
           <select name = "role" className ="form-control" aria-describedby="emailHelp" value = {userCredential.role} onChange = {setCredential}>
             <option value = "Worker">Worker</option>
-            <option value = "Customer">Customer</option>
+            <option value = "Employer">Employer</option>
           </select>
           <div id="emailHelp" className ="form-text">We'll never share your role with anyone else.</div>
         </div>
