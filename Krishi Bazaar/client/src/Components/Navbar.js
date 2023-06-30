@@ -43,7 +43,7 @@ const Navbar = () => {
             </li>
               <li>
               {/* dropdown */}
-              <NavLink>
+              
               <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" onClick={toggleOpen}>
                   Profile
@@ -53,7 +53,6 @@ const Navbar = () => {
                   <li><NavLink className ="dropdown-item" to ="/editprofile">Edit Profile</NavLink></li>
                 </ul>
               </div>
-              </NavLink>
               </li>
               <li>
               <NavLink className ="nav-link active" aria-current="page" to ="/" onClick={handleLogout}>Logout</NavLink>

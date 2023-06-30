@@ -11,6 +11,7 @@ import Token from './Components/Token';
 import WorkerDashboard from './Components/WorkerDashboard/WorkerDashboard';
 import AboutUs from './Components/About us/AboutUs';
 import Profile from './Components/Profile';
+import JobSearch from './Components/JobSearch/JobSearch';
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +28,7 @@ function App() {
           <Route exact path = '/workerdashboard' element = {<WorkerDashboard/>} />
           <Route exact path = '/about' element = {<AboutUs/>} />
           <Route exact path = '/profile' element = {<Profile/>} />
+          <Route exact path = '/jobsearch' element = {<JobSearch/>} />
         </Routes>
       </div>
     </BrowserRouter>
