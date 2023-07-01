@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import Nav from './ViewProfileComponents/Nav';
+import UserDetails from './ViewProfileComponents/Info';
 const Profile = () => {
     const [authenticated, setAuthenticated] = useState(null);
     const [name, setName] = useState("");
@@ -12,14 +14,18 @@ const Profile = () => {
     if(authenticated)
     {
         return (
-            <div>
-                <h1>Profile</h1>
-            </div>
+          <div>
+          <>
+          <Nav/>
+          <UserDetails/>
+          </>
+          
+        </div>
         )
     }
   return (
     <div>
-      
+      <h1>Not authenticated</h1>
     </div>
   )
 }

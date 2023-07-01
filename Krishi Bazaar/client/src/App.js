@@ -10,8 +10,10 @@ import ResetPassword from './Components/ResetPassword';
 import Token from './Components/Token';
 import WorkerDashboard from './Components/WorkerDashboard/WorkerDashboard';
 import AboutUs from './Components/About us/AboutUs';
-import Profile from './Components/Profile';
+import Profile from './Components/ViewProfile/Profile'
 import JobSearch from './Components/JobSearch/JobSearch';
+import CompleteProfile from './Components/CompleteProfile/CompleteProfile';
+import WorkerHistory from './Components/WorkerHistory/WorkerHistory';
 function App() {
   return (
     <BrowserRouter>
@@ -29,6 +31,8 @@ function App() {
           <Route exact path = '/about' element = {<AboutUs/>} />
           <Route exact path = '/profile' element = {<Profile/>} />
           <Route exact path = '/jobsearch' element = {<JobSearch/>} />
+          <Route exact path = '/completeprofile' element = {<CompleteProfile/>} />
+          <Route exact path = '/workerhistory' element = {<WorkerHistory/>} />
         </Routes>
       </div>
     </BrowserRouter>

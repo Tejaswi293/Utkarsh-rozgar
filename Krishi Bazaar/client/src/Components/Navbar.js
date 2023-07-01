@@ -50,7 +50,7 @@ const Navbar = () => {
                 </button>
                 <ul className={`dropdown-menu ${dropdown ? 'show' : ''}`} aria-labelledby="dropdownMenuButton1" >
                   <li><NavLink className ="dropdown-item" to ="/profile">View Profile</NavLink></li>
-                  <li><NavLink className ="dropdown-item" to ="/editprofile">Edit Profile</NavLink></li>
+                  <li><NavLink className ="dropdown-item" to ="/completeprofile">Edit Profile</NavLink></li>
                 </ul>
               </div>
               </li>
