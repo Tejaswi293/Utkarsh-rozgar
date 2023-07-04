@@ -53,6 +53,7 @@ const Login = () => {
             setAuthenticated(true);
             localStorage.setItem('Status', data.status);
             localStorage.setItem('Name', data.name);
+            localStorage.setItem('role', data.role);
             if(userCredential.role === "Worker")
             {
                 navigate('/workerdashboard');
@@ -63,7 +64,7 @@ const Login = () => {
                 navigate('/admindashboard');
                 window.location.reload();
             }
-            else if(userCredential.role === "Admin")
+            else
             {
                 navigate('/admindashoard');
                 window.location.reload();
@@ -88,7 +89,7 @@ const Login = () => {
             <div class="mb-3">
             <label for="role" className = "form-label">Role</label>
             <select name = "role" className ="form-control" aria-describedby="emailHelp" value = {userCredential.role} onChange = {setCredential}>
-                <option value = "Nodal officer">Nodal officer</option>
+                <option value = "Admin">Admin</option>
                 <option value = "Worker">Worker</option>
                 <option value = "Employer">Employer</option>
             </select>

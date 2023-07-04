@@ -1,6 +1,8 @@
 import React from 'react'
 import {Route, useNavigate} from 'react-router-dom';
 import './Job.css'
+//  import arrow from react-icons/fa/arrow-right
+import { FaArrowRight } from 'react-icons/fa'
 export default function Job() {
     const navigate = useNavigate();
     const handleClick = () => {
@@ -32,10 +34,7 @@ export default function Job() {
                             of the terrace which will take upto two to three days <br /> Basis: Contract <br /> Proposed Wage:
                             1000 per day</p>
                         <a class="text-red-500 inline-flex items-center mt-3">Make an Offer
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
+                        <FaArrowRight />
                         </a>
                     </div>
                     <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
@@ -45,11 +44,10 @@ export default function Job() {
                             Chinese Fast Food,Pani Pur, Ice Cream etc <br /> Date: 20-04-2022 <br /> Basis:Contract <br />
                             Proposed Wage: Based on Consumption</p>
                         <a class="text-red-500 inline-flex items-center mt-3">Make an Offer
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
+                            {/* arrow right */}
+                            <FaArrowRight />
                         </a>
+                        
                     </div>
                     <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
 
@@ -57,10 +55,7 @@ export default function Job() {
                         <p class="text-base leading-relaxed mt-2">Need a plumber for a day for repairment of leakage from
                             the ceiling <br /> Date: Before 27-04-2023<br /> Basis: Daily Wage</p>
                         <a class="text-red-500 inline-flex items-center mt-3">Make an Offer
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
+                        <FaArrowRight />
                         </a>
                     </div>
                 </div>

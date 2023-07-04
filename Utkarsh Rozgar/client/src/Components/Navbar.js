@@ -7,6 +7,7 @@ import Anchor from './Anchor.png'
 const Navbar = () => {
   const [authenticated, setAuthenticated] = useState(null);
   const [name, setName] = useState("");
+  const role = localStorage.getItem("role");
     useEffect(() => {
     const loggedInUser = localStorage.getItem("authenticated");
     const userName = localStorage.getItem("Name");
@@ -39,7 +40,12 @@ const Navbar = () => {
                   <p className='nav-link-active' style={{color : "white", paddingTop : "8px"}}>Welcome {name}</p>
               </li>
               <li>
-              <NavLink className ="nav-link active" aria-current="page" to ="/workerdashboard">Home</NavLink>
+              {
+                role === "Admin" ?
+                <NavLink className ="nav-link active" aria-current="page" to ="/admindashboard">Admin</NavLink>
+                :
+                <NavLink className ="nav-link active" aria-current="page" to ="/workerdashboard">Dashboard</NavLink>
+              }
             </li>
               <li>
               {/* dropdown */}
