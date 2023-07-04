@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
-
+const style = {
+  "display": "flex",
+  "justify-content": "center",
+  "align-items": "center",
+  "height": "100vh"
+}
 const Signup = () => {
 
   const [userCredential, setUserCredential] = useState({
@@ -42,7 +47,7 @@ const Signup = () => {
   }
 
   return (
-    <div className = "container mt-5 m-auto w-50 border p-5">
+    <div style={style}>
       <form>
         <h1>Sign Up</h1>
         <div className="mb-3">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Info.css';
+
 
 function UserDetails() {
   const [firstName, setFirstName] = useState('');

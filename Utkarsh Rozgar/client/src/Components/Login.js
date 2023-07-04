@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
 import {Route, useNavigate} from 'react-router-dom';
+const style = {
+    "display": "flex",
+    "justify-content": "center",
+    "align-items": "center",
+    "height": "100vh"
+  }
 const Login = () => {
     const navigate = useNavigate();
     const [userCredential, setUserCredential] = useState({
@@ -68,7 +74,7 @@ const Login = () => {
           }
     }
     return (
-        <div className="container mt-5 m-auto w-50 border p-5">
+        <div style={style}>
             <form>
             <h1>Login</h1>
             <div className="mb-3">
