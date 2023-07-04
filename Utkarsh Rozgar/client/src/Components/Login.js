@@ -5,7 +5,7 @@ const style = {
     "justify-content": "center",
     "align-items": "center",
     "height": "100vh"
-  }
+}
 const Login = () => {
     const navigate = useNavigate();
     const [userCredential, setUserCredential] = useState({
