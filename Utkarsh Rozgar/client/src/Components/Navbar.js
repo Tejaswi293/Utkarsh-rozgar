@@ -41,7 +41,7 @@ const Navbar = () => {
               </li>
               <li>
               {
-                role === "Admin" ?
+                role === "Admin" || role === "Employer" ?
                 <NavLink className ="nav-link active" aria-current="page" to ="/admindashboard">Admin</NavLink>
                 :
                 <NavLink className ="nav-link active" aria-current="page" to ="/workerdashboard">Dashboard</NavLink>
