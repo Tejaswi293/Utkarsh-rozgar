@@ -28,7 +28,43 @@ const schema = new mongoose.Schema({
     },
     token: {
         type: String
-    }
+    },
+    firstname: {
+        type: String,
+        required: true,
+    },
+    lastname: {
+        type: String,
+        required: true,
+    },
+    age: {
+        type: Number,
+        required: true,
+    },
+    gender: {
+        type: String,
+        required: true,
+    },
+    aadhar: {
+        type: Number,
+        required: true,
+    },
+    pincode: {
+        type: Number,
+        required: true,
+    },
+    address: {
+        type: String,
+        required: true,
+    },
+    maritial_status: {
+        type: String,
+        required: true,
+    },
+    state: {
+        type: String,
+        required: true,
+    },
 });
 
 

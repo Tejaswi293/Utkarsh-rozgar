@@ -1,6 +1,67 @@
 import React from 'react'
 import './Form.css'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+// place button in the center.
+const buttonStyle = {
+    margin: 'auto',
+    width: '50%',
+    padding: '10px',
+    textAlign: 'center',
+    marginTop: '10px',
+    marginBottom: '10px',
+    backgroundColor: 'red',
+    color: 'white',
+    borderRadius: '10px',
+    border: 'none',
+    cursor: 'pointer'
+}
 export default function Form() {
+    const navigate = useNavigate();
+    const [userDetail, setUserDetail] = useState({
+        firstname: '',
+        lastname: '',
+        age: '',
+        gender: '',
+        aadhar: '',
+        pincode: '',
+        address: '',
+        state: '',
+        maritial_status: '',
+    })
+    const setCredential = (e) => {
+        let nameOfData = e.target.id;
+        let value = e.target.value;
+        setUserDetail({ ...userDetail, [nameOfData]: value });
+    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const email = localStorage.getItem('email');
+        // send data to backend
+        const {firstname, lastname, age, gender, aadhar, pincode, address, state, maritial_status} = userDetail;
+        const res = await fetch('/completeprofile', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                firstname, lastname, age, gender, aadhar, pincode, address, state, maritial_status, email
+            })
+        });
+        const data =  res.json();
+        if (data.status === 422 || !data) {
+            alert('Enter the details properly');
+        }
+        else {
+            alert('Profile completed successfully');
+            navigate('/profile');
+            window.location.reload();
+        }
+
+    }
+
+
+
     return (
         <div className='contain' id='contain'>
             <h1>
@@ -12,31 +73,31 @@ export default function Form() {
                         Name
                     </label>
                     <input type="text"
-                        id="name"
-                        placeholder="Enter your First name" />
+                        id="firstname"
+                        placeholder="Enter your First name" value={userDetail.firstname} onChange={setCredential} />
                     <input type="text"
-                        id="name"
-                        placeholder="Enter your last name" />
+                        id="lastname"
+                        placeholder="Enter your last name" value={userDetail.lastname} onChange={setCredential} />
                 </div>
                 <div className="form-age">
                     <label for="age" id="age">Age: </label>
-                    <input type="number" id="age" placeholder='अपनी उम्र दर्ज करें' />
+                    <input type="number" id="age" placeholder='अपनी उम्र दर्ज करें' value={userDetail.age} onChange={setCredential} />
                 </div>
                 <div className='form-gender'>
                     <label htmlFor="gender"> Tick Your gender:</label>
-                    <input type='radio' name='gender' id='gender' /> Male
-                    <input type='radio' name='gender' id='gender' /> Female
+                    <input type='radio' name='gender' id='gender' value={userDetail.gender} onChange={setCredential}/> Male
+                    <input type='radio' name='gender' id='gender' value={userDetail.gender} onChange={setCredential}/> Female
                 </div>
                 <div className='form-aadhar'>
                     <label htmlFor='aadhar' >Enter Your aadhar Number /
                         अपना आधार नंबर दर्ज करें :<br /> </label>
-                    <input type='number' maxLength={12} minLength={12} placeholder='XXXX XXXX XXXX ' />
+                    <input type='number' id='aadhar' maxLength={12} minLength={12} placeholder='XXXX XXXX XXXX' value={userDetail.aadhar} onChange={setCredential} />
                 </div>
                 <div className='form-address'>
                     <label htmlFor='address' id='address' > Enter Your Address / अपना पता दर्ज करें:<br /> </label>
-                    <input type='number' minLength={6} maxLength={6} placeholder='PINCODE' />
-                    <input type='text' placeholder='CITY' />
-                    <select name="state" id="state" class="form-control" placeholder='STATE'>
+                    <input type='number' id='pincode' value={userDetail.pincode} minLength={6} maxLength={6} placeholder='PINCODE' onChange={setCredential}/>
+                    <input type='text'id='address' value={userDetail.address} placeholder='ADDRESS' onChange={setCredential} />
+                    <select name="state" id="state" class="form-control" placeholder='STATE' value={userDetail.state} onChange={setCredential}>
                         <option value=""  ><div className="state">STATE</div></option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -78,12 +139,15 @@ export default function Form() {
                 </div>
                 <div className='form-maritial' >
                     <label htmlFor='maritial_status' > Your Maritial Status / आपकी वैवाहिक स्थिति: <br /></label>
-                    <input type='radio' name='status' /> Married
-                    <input type='radio' name='status' /> Unmarried
-                    <input type='radio' name='status' /> Divorced
+                    <input type='radio' name='status' id='maritial_status' value={userDetail.maritial_status} onChange={setCredential}/> Married
+                    <input type='radio' name='status' id='maritial_status' value={userDetail.maritial_status} onChange={setCredential}/> Unmarried
+                    <input type='radio' name='status' id='maritial_status' value={userDetail.maritial_status} onChange={setCredential}/> Divorced
                 </div>
-                <button>Submit</button>
+                <button style={buttonStyle} onClick={handleSubmit}>Submit</button>
             </form>
+            <br/>
+            <br/>
+            <br/>
         </div>
     )
 }

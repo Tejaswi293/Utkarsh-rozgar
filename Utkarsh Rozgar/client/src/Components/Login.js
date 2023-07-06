@@ -54,6 +54,7 @@ const Login = () => {
             localStorage.setItem('Status', data.status);
             localStorage.setItem('Name', data.name);
             localStorage.setItem('role', userCredential.role);
+            localStorage.setItem('email', userCredential.email);
             if(userCredential.role === "Worker")
             {
                 navigate('/workerdashboard');

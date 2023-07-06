@@ -42,7 +42,6 @@ const Signup = () => {
     } 
     else{
       alert("REGISTRATION SUCCESSFULL");
-      
     }
   }
 

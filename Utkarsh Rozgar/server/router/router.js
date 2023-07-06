@@ -24,6 +24,40 @@ router.get('/login', (req, res) => {
   res.send('Hello this is LOGIN routing');
 });
 
+// complete profile
+router.post('/completeprofile', async (req, res) => {
+  const {
+    firstname,
+    lastname,
+    age,
+    gender,
+    aadhar,
+    pincode,
+    address,
+    state,
+    maritial_status,
+    email,
+  } = req.body;
+//  save data to database for the current user
+ const registeredUser = await User.findOne({ email: email });
+  if (!registeredUser) {
+    res.status(422).json({ message: 'User not Found', state: false });
+  }
+  registeredUser.firstname = firstname;
+  registeredUser.lastname = lastname;
+  registeredUser.age = age;
+  registeredUser.gender = gender;
+  registeredUser.aadhar = aadhar;
+  registeredUser.pincode = pincode;
+  registeredUser.address = address;
+  registeredUser.state = state;
+  registeredUser.maritial_status = maritial_status;
+  res.status(200).json({ message: 'Profile Updated', state: true });
+  await registeredUser.save({ validateBeforeSave: false });
+});
+  
+
+
 router.post('/forgotpassword', async (req, res) => {
   createResetToken = function () {
     const resetToken = crypto.randomBytes(32).toString('hex');

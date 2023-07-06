@@ -1,5 +1,18 @@
 import React, { useState } from 'react';
-
+// align button to center.
+const buttonStyle = {
+  margin: 'auto',
+  width: '50%',
+  padding: '10px',
+  textAlign: 'center',
+  marginTop: '10px',
+  marginBottom: '10px',
+  backgroundColor: 'red',
+  color: 'white',
+  borderRadius: '10px',
+  border: 'none',
+  cursor: 'pointer'
+}
 
 function UserDetails() {
   const [firstName, setFirstName] = useState('');
@@ -128,7 +141,7 @@ function UserDetails() {
         </label>
         
 
-        <button type="submit" className="submit-button">Submit</button>
+        <button type="submit" style={buttonStyle}>Submit</button>
       </form>
     </div>
   );
