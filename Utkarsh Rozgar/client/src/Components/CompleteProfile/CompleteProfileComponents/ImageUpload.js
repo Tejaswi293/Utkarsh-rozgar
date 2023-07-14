@@ -95,7 +95,7 @@ class ImageUploadCard extends React.Component {
         </Grid>
         <label htmlFor="contained-button-file">
           <Button variant="contained" component="span">
-            Select Image
+            Upload profile picture
             <input
               accept="image/*"
               className={classes.input}
