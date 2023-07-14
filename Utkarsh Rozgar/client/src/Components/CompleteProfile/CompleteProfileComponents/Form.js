@@ -2,6 +2,7 @@ import React from 'react'
 import './Form.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ImageUpload from './ImageUpload';
 // place button in the center.
 const buttonStyle = {
     margin: 'auto',
@@ -16,6 +17,7 @@ const buttonStyle = {
     border: 'none',
     cursor: 'pointer'
 }
+// place imageUpload in centre
 export default function Form() {
     const navigate = useNavigate();
     const [userDetail, setUserDetail] = useState({
@@ -59,6 +61,14 @@ export default function Form() {
         }
 
     }
+    const galleryImageList = [
+        "https://raw.githubusercontent.com/dxyang/StyleTransfer/master/style_imgs/mosaic.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+        "https://raw.githubusercontent.com/ShafeenTejani/fast-style-transfer/master/examples/dora-maar-picasso.jpg",
+        "https://pbs.twimg.com/profile_images/925531519858257920/IyYLHp-u_400x400.jpg",
+        "https://raw.githubusercontent.com/ShafeenTejani/fast-style-transfer/master/examples/dog.jpg",
+        "http://r.ddmcdn.com/s_f/o_1/cx_462/cy_245/cw_1349/ch_1349/w_720/APL/uploads/2015/06/caturday-shutterstock_149320799.jpg"
+      ];
 
 
 
@@ -67,8 +77,11 @@ export default function Form() {
             <h1>
                 Complete Your Profile/ अपनी प्रोफ़ाइल पूर्ण करें
             </h1>
-            <form id='form' >
+            <form id='form'>
                 <div class="form-control">
+                {/* upload profile picture */}
+                {/* imageupload */}
+                <ImageUpload cardName="Input Image" imageGallery={galleryImageList} />
                     <label for="name" id="label-name">
                         Name
                     </label>
