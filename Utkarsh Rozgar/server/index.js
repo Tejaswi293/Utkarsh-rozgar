@@ -11,7 +11,7 @@ dotenv.config({ path: './config.env' });
 const port = process.env.PORT || 5000;
 
 // configuring database
-require('../Database/connection');
+require('./Database/connection');
 // Your code
 // if (process.env.NODE_ENV === "production") {
 //     const path = require("path");
@@ -28,7 +28,7 @@ require('../Database/connection');
 
 
 // routers
-app.use(require('../router/router'));
+app.use(require('./router/router'));
 
 
 
