@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 require('../Database/connection');
 const User = require('../model/userSchema');
-const cors = require('cors');
+
 // configuring MiddleWare
 const middleware = (req, res, next) => {
   next();
