@@ -30,7 +30,7 @@ const Login = () => {
     const sendData = async (e) => {
         e.preventDefault();
         const { email, password, role } = userCredential;
-        const res = await fetch('/login', {
+        const res = await fetch('https://utkarsh-rozgar-server1.vercel.app/login', {
             method: "POST",
             headers: {
                 "content-Type": "application/json"
