@@ -13,7 +13,7 @@ const setCredential = (e) => {
 const sendData = async (e) => {
     e.preventDefault();
     const { email } = userCredential;
-    const res = await fetch('/forgotpassword', {
+    const res = await fetch('https://utkarsh-rozgar-server.vercel.app/forgotpassword', {
         method: "POST",
         headers: {
             "content-Type": "application/json"

@@ -26,7 +26,7 @@ const Signup = () => {
     e.preventDefault();
     const {name, phone, role, email, password, confirmPassword} = userCredential;
     
-    const res = await fetch('/signup', {
+    const res = await fetch('https://utkarsh-rozgar-server.vercel.app/signup', {
       method: "POST",
       headers: {
         "content-Type": "application/json"

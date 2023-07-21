@@ -41,7 +41,7 @@ export default function Form() {
         const email = localStorage.getItem('email');
         // send data to backend
         const {firstname, lastname, age, gender, aadhar, pincode, address, state, maritial_status} = userDetail;
-        const res = await fetch('/completeprofile', {
+        const res = await fetch('https://utkarsh-rozgar-server.vercel.app/completeprofile', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

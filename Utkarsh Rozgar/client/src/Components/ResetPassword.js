@@ -16,7 +16,7 @@ const ResetPassword = (props) => {
         e.preventDefault();
         const { password, confirmPassword } = userCredential;
         if (password === confirmPassword) {
-            const res = fetch('/resetpassword', {
+            const res = fetch('https://utkarsh-rozgar-server.vercel.app/resetpassword', {
                 method: "POST",
                 headers: {
                     "content-Type": "application/json"
