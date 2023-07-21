@@ -23,6 +23,18 @@ router.get('/about', middleware, (req, res, next) => {
 router.get('/login', (req, res) => {
   res.send('Hello this is LOGIN routing');
 });
+router.get('/signup', (req, res) => {
+  res.send('Hello this is SIGNUP routing');
+});
+router.get('/completeprofile', (req, res) => {
+  res.send('Hello this is COMPLETEPROFILE routing');
+});
+router.get('/forgotpassword', (req, res) => {
+  res.send('Hello this is FORGOTPASSWORD routing');
+});
+router.get('/resetpassword', (req, res) => {
+  res.send('Hello this is RESETPASSWORD routing');
+});
 
 // complete profile
 router.post('/completeprofile', async (req, res) => {
