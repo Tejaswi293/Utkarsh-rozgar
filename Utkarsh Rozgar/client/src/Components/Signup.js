@@ -33,7 +33,8 @@ const Signup = () => {
       },
       body: JSON.stringify({
         name, email, phone, role, password, confirmPassword
-      })
+      }),
+      mode: "cors"
     });
 
     const data = res.json();
