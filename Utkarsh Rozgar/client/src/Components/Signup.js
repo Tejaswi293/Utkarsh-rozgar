@@ -29,7 +29,8 @@ const Signup = () => {
     const res = await fetch('https://utkarsh-rozgar-server.vercel.app/signup', {
       method: "POST",
       headers: {
-        "content-Type": "application/json"
+        "content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
         name, email, phone, role, password, confirmPassword
