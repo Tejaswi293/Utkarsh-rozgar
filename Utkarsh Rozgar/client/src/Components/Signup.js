@@ -33,7 +33,7 @@ const Signup = () => {
       },
       body: JSON.stringify({
         name, email, phone, role, password, confirmPassword
-      }),
+      })
     });
 
     const data = res.json();
