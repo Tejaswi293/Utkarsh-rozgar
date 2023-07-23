@@ -20,7 +20,9 @@ router.get('/about', middleware, (req, res, next) => {
   res.send('Hello this is ABOUT routing');
 });
 
-
+router.get('/signup', (req, res) => {
+  res.send('Hello this is SIGNUP routing');
+});
 
 router.get('/login', (req, res) => {
   res.send('Hello this is LOGIN routing');
