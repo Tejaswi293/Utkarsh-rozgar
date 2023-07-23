@@ -36,7 +36,7 @@ const Signup = () => {
       }),
     });
 
-    const data = await res.json();
+    const data = res.json();
     if(!data || data.status === 500){
       alert("REGISTRATION FAILED");
     } 
