@@ -36,7 +36,7 @@ const Signup = () => {
       }),
     });
 
-    const data = await res.json();
+    const data = res.json();
     console.log(data);
     console.log(JSON.stringify(data));
     if(!data || data.status === 500){
