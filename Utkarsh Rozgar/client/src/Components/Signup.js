@@ -37,6 +37,8 @@ const Signup = () => {
     });
 
     const data = await res.json();
+    console.log(data);
+    console.log(JSON.stringify(data));
     if(!data || data.status === 500){
       alert("REGISTRATION FAILED");
     } 
