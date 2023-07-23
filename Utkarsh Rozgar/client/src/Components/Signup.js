@@ -29,7 +29,7 @@ const Signup = () => {
     const res = await fetch('https://utkarsh-rozgar-server.vercel.app/signup', {
       method: "POST",
       headers: {
-        "content-Type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name, email, phone, role, password, confirmPassword
