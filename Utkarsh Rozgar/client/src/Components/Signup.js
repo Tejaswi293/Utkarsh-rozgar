@@ -30,12 +30,10 @@ const Signup = () => {
       method: "POST",
       headers: {
         "content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
         name, email, phone, role, password, confirmPassword
       }),
-      mode: "cors"
     });
 
     const data = res.json();
