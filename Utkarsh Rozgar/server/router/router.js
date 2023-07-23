@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 require('../Database/connection');
 const User = require('../model/userSchema');
 const cors = require('cors');
-router.use(cors());
+app.use(cors());
 // configuring MiddleWare
 const middleware = (req, res, next) => {
   next();
