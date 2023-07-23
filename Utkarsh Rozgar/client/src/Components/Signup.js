@@ -34,6 +34,7 @@ const Signup = () => {
       body: JSON.stringify({
         name, email, phone, role, password, confirmPassword
       }),
+      mode: 'no-cors'
     });
 
     const data = await res.json();
