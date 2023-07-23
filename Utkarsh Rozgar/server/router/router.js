@@ -5,8 +5,7 @@ const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 require('../Database/connection');
 const User = require('../model/userSchema');
-const cors = require('cors');
-router.use(cors());
+
 // configuring MiddleWare
 const middleware = (req, res, next) => {
   next();
@@ -21,9 +20,7 @@ router.get('/about', middleware, (req, res, next) => {
   res.send('Hello this is ABOUT routing');
 });
 
-router.get('/signup', (req, res) => {
-  res.send('Hello this is SIGNUP routing');
-});
+
 
 router.get('/login', (req, res) => {
   res.send('Hello this is LOGIN routing');
