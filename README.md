@@ -26,3 +26,5 @@ You will also see any lint errors in the console.
 Sample email : sk456@gmail.com
 Sample password : sk123456
 Role : Worker
+
+Thank you for visiting!
